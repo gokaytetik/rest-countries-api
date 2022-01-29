@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&display=swap");
+
+/* 
+     Dark Mode Elements: hsl(209, 23%, 22%)
+    Dark Mode Background: hsl(207, 26%, 17%)
+ */
+
+::root {
+  --alpha: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
+  --beta: hsl(200, 15%, 8%); /* Light Mode Text */
+  --gamma: hsl(0, 0%, 98%); /* Light Mode Background */
+  --delta: hsl(0, 0%, 52%); /* Light Mode Input */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  color: var(--beta);
+}
+
+body.dark {
+  --alpha: hsl(209, 23%, 22%);
+  --gamma: hsl(207, 26%, 17%);
+  --beta: #fff;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 70px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #fff;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+body.dark header {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--beta);
+}
+
+.toggle-btn .fas {
+  display: none;
+}
+
+body.dark .toggle-btn .fas {
+  display: inline-block;
+}
+
+body.dark .toggle-btn .far {
+  display: none;
+}
+
+main {
+  background-color: var(--gamma);
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 70px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: var(--alpha);
+  padding: 20px 30px;
+  width: 450px;
+  border-radius: 5px;
+}
+
+.search .fas {
+  color: var(--beta);
+}
+.search input {
+  background: none;
+  border: none;
+  margin-left: 25px;
+  font-size: 16px;
+  width: 400px;
+  color: inherit;
+}
+
+.search input::placeholder {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  color: var(--beta);
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--alpha);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-btn {
+  padding: 20px;
+}
+
+.dropdown .fas {
+  margin-left: 30px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  list-style: none;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in;
+  z-index: 4;
+}
+
+body.dark .dropdown-menu {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.hide {
+  opacity: 0;
+}
+
+.dropdown-menu li {
+  margin: 15px 20px;
+}
+
+.dropdown-menu li:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  max-width: 250px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: var(--alpha);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-body {
+  margin: 30px 25px;
+}
+
+.card h2 {
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+.card p {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.modal {
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: none;
+}
+
+body.dark .modal {
+  background-color: hsl(207, 26%, 17%);
+}
+
+.modal-container {
+  padding: 150px 70px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 25px;
+  background-color: var(--alpha);
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: inherit;
+  cursor: pointer;
+  margin-bottom: 80px;
+  border: 5px;
+}
+
+.back-btn .fas {
+  margin-right: 5px;
+}
+
+.modal-img {
+  width: 560px;
+  height: 400px;
+  margin-right: 120px;
+}
+
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+}
+.modal-wrapper h2 {
+  margin-bottom: 30px;
+}
+
+.country-details {
+  display: flex;
+}
+
+.left {
+  margin-right: 150px;
+}
+
+.country-details p {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.modal-footer p {
+  margin-left: 10px;
+  background-color: var(--alpha);
+  padding: 5px 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 760px) {
+  h1 {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 20px 10px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+
+  .search {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .dropdown .fas {
+    margin-left: 50px;
+  }
+  .modal-container {
+    padding: 0;
+  }
+  .back-btn {
+    margin-bottom: 20px;
+  }
+
+  .modal {
+    font-size: 14px;
+    align-items: flex-end;
+  }
+  .modal-wrapper {
+    flex-direction: column;
+  }
+
+  .modal-img {
+    margin: 0;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .country-details {
+    flex-direction: column;
+  }
+
+  .left {
+    margin-bottom: 10px;
+  }
+
+  .modal-footer {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .modal-footer h3 {
+    font-size: 16px;
+  }
+}
